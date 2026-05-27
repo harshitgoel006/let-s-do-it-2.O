@@ -789,13 +789,13 @@ Default
 
 # Difference Between `||` and `??`
 
-| Value | `||` | `??` |
+| Value | `value \|\| "default"` | `value ?? "default"` |
 |---|---|---|
-| `0` | fallback use karega | `0` return karega |
-| `""` | fallback use karega | `""` return karega |
-| `false` | fallback use karega | `false` return karega |
-| `null` | fallback use karega | fallback use karega |
-| `undefined` | fallback use karega | fallback use karega |
+| `0` | `"default"` return karega | `0` return karega |
+| `""` | `"default"` return karega | `""` return karega |
+| `false` | `"default"` return karega | `false` return karega |
+| `null` | `"default"` return karega | `"default"` return karega |
+| `undefined` | `"default"` return karega | `"default"` return karega |
 
 ---
 
