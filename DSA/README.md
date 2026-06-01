@@ -1,3 +1,73 @@
+# DSA Revision Notes
+
+This repository contains my personal DSA revision notes.
+
+The goal is not to memorize code, but to build strong pattern recognition, interview intuition, and optimal approach recall.
+
+---
+
+# Revision Categories
+
+## 🟢 A Category
+
+Questions that I can solve comfortably.
+
+* Pattern identified immediately
+* Optimal approach remembered
+* Complexity remembered
+* Minor syntax mistakes only
+
+Revision Cycle:
+
+* Day 1
+* Day 4
+* Day 8
+* Day 15
+* Day 30
+
+---
+
+## 🟡 B Category
+
+Questions where the pattern is remembered but implementation or intuition is weak.
+
+Revision Cycle:
+
+* Day 1
+* Day 3
+* Day 7
+* Day 14
+
+---
+
+## 🔴 C Category
+
+Questions where I struggled significantly.
+
+Revision Cycle:
+
+* Next Day
+* Day 3
+* Day 7
+* Day 14
+
+---
+
+## ⭐ N Category
+
+Newly learned concepts.
+
+Revision Cycle:
+
+* Next Day
+* Day 5
+* Day 10
+* Day 20
+
+---
+
+
+
 ## PHASE 1: Arrays + Hashing (20)
 
 # Easy
