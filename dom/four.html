@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLang(name){
+        const list = document.createElement('li');
+        list.innerHTML = `${name}`
+        const ul = document.querySelector('.language');
+        ul.appendChild(list);
+
+    }
+
+    addLang("python");
+    addLang("java");
+// optimised hai kuki tree pura ka pura traverse karna nhi pad raha hai 
+    function addOpti(name){
+       const li =  document.createElement('li');
+       li.appendChild(document.createTextNode(name));
+       document.querySelector('.language').appendChild(li);
+    }
+    addOpti('golang')
+
+    //edit
+
+    const secLang = document.querySelector("li:nth-child(2)")
+    console.log(secLang);
+    // secLang.innerHTML ="mojo"
+
+    const newLi = document.createElement('li')
+    newLi.textContent = "mojo"
+    secLang.replaceWith(newLi);
+
+
+    const secLangu = document.querySelector("li:first-child");
+    secLangu.outerHTML = '<li>TypeScript</li>'
+
+
+    // remove
+
+    const lang = document.querySelector("li:last-child");
+    lang.remove();
+
+</script>
+</html>
