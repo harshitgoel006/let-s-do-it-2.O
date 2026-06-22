@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" src="https://images.pexels.com/photos/38163314/pexels-photo-38163314.jpeg" id="tree" alt="" ></li>
+            <li><img width="200px" src="https://images.pexels.com/photos/37720197/pexels-photo-37720197.jpeg" id="monkey" alt=""></li>
+            <li><img width="200px" src="https://images.pexels.com/photos/8361858/pexels-photo-8361858.jpeg" id="window" alt=""></li>
+            <li><img width="200px" src="https://images.pexels.com/photos/38110389/pexels-photo-38110389.jpeg" id="girl" alt=""></li>
+            <li><img width="200px" src="https://images.pexels.com/photos/29122139/pexels-photo-29122139.jpeg" id="street" alt=""></li>
+            <li><img width="200px" src="https://images.pexels.com/photos/7151015/pexels-photo-7151015.jpeg" id="nature" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('tree').onclick = function(){
+        alert("tree click");
+    }
+
+    document.getElementById('tree').addEventListener('click',function(){
+        alert('tree click')
+    },false)   --->  approach 2
+
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log('click inside the ul');
+        
+    },false)
+    document.getElementById('tree').addEventListener('click',function(e){
+        console.log('tree clicked');
+        e.stopPropagation()
+    },false)
+
+    isme pehle tree wala hua uske baad image wala hua agr eventpropagation ki vaue false hai toh 
+    agr uski value true hai toh --> pehle image wala uske baad tree wala yani pehle parent then child
+
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log('click inside the ul');
+        
+    },true)
+    document.getElementById('tree').addEventListener('click',function(e){
+        console.log('tree clicked');
+        
+    },true)
+
+eventpropagation --->  iske 2 context hote hai ek event bubbling  and ek hota hai event capturing
+
+document.getElementById('google').addEventListener('click',function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("google clicked");
+},false)
+
+    // type  , timestamp, defaultPrevented
+    //target, toElement , srcElement  , currentTarget,  
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode
+
+
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e);
+        console.log(e.target.tagName);
+        
+        removeIt.parentNode.removeChild(remove);
+
+        if(e.target.tagName === 'IMG'){
+            let remove = e.target.parentNode
+        remove.remove();
+        }
+
+    });
+
+
+</script>
+</html>
