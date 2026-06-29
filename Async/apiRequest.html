@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+
+ purane time mein server data xml format mein bhejta tha.
+XMLHttpReuqest browser ka built-in object hai 
+
+
+    const requestUrl = "https://api.github.com/users/harshitgoel006";
+    const xhr = new XMLHttpRequest(); //  ye ek method hai jis ki help se apna data request recieve kr skte hai and send kr sakte hai
+    xhr.open("GET", requestUrl); //method and string 2 parameter lagte hai
+       open apne aap call nhi hota hai hume khud manually karna padta hai
+    console.log("here");
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(typeof data);
+        console.log(data.followers);
+      }
+    };
+
+    xhr.send(); //iske through open call hota hai
+
+
+    ready State -- >  Jab request server tak jaati hai to ekdum se response nahi aa jata. Beech mein kuch stages hoti hain.  Browser un stages ko number deta hai.(0,1,2,3,4)  yehi ready state hai 
+
+    state 0 --> UNSENT (object ban gaya hai lekin open nhi hua hai send nhi hua hai)
+    state 1 --> OPENED (request configure ho gayi hai abhi bheji nhi hai )
+    State 2 --> HEADERS_RECEIVED (request server tak pahuch gayi server ne response start kr diya hai header aa gaye hai body abhi nhi aayi hai)
+    State 3 --> LOADING  (response aa raha hai data stream ho raha hai abhi complete nhi hua hai)
+    State 4 --> DONE (iss stage pr xhr.responseText use kr skte ho yehi state sabse imp hai )
+    
+    state 4 ke baad hi data read krna chaiye
+
+
+    inversion of control --->  when you paas a callback to another function you lose control over when how many times, or even whether that callbackwill be executed.
+    
+    
+    
+
+
+  </script>
+</html>
